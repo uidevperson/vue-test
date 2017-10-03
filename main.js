@@ -16,7 +16,6 @@ Vue.component('task-list', {
 				{task: 'clean room', complete: true},
 			] 
 		};
-		
 	}
 });
 
