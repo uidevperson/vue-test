@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vue</title>
+	<style>
+		.is-loading {
+			background: red;
+		}
+	</style>
+</head>
+<body>
+<div id="root">
+	<h1>complete tasks</h1>
+	<ul>
+		<li v-for='task in tasks' v-if='task.completed' v-text='task.description'></li>
+	</ul>
+
+	<h1>incomplete tasks</h1>
+	<ul>
+		<li v-for='task in incompleteTasks' v-text='task.description'></li>
+	</ul>
+</div>
+	<script type="text/javascript" src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
+	<script type="text/javascript">
+		let app = new Vue({
+			el:'#root',
+			data:{
+				title:'my tits',
+				isLoading: false,
+				message: 'Hello World',
+				tasks: [
+					{description: 'go to the store', completed: true},
+					{description: 'finish screencast', completed: false},
+					{description: 'make donation', completed: false},
+					{description: 'clear inbox', completed: false},
+					{description: 'gmake dinner', completed: false},
+					{description: 'clean room', completed: true},
+				],
+			},
+			methods: {
+				addName() {
+					this.names.push(this.newName);
+					this.newName = '';
+				},
+				toggleClass() {
+					this.isLoading = true;
+				}
+			},
+			computed: {
+				reverseMessage() {
+					return this.message.split('').reverse().join('');
+				},
+				incompleteTasks() {
+					return this.tasks.filter(task => ! task.completed);
+				}
+			}
+		});
+	</script>
+</body>
+</html>
