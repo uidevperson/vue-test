@@ -1,15 +1,15 @@
-Vue.component('message', {
+Vue.component('modal', {
 	props: ['title', 'body'],
 	template: `
-		<article class="message" v-show='isVisible'>
-	  <div class="message-header">
-	    <p>{{ title }}</p>
-	    <button @click='isVisible = false' class="delete" aria-label="delete"></button>
-	  </div>
-	  <div class="message-body">
-	  	{{ body }}
-	  </div>
-	</article>
+	  <div class="modal is-active">
+		  <div class="modal-background"></div>
+		  <div class="modal-content">
+		  	<div class='box'>
+			    <slot></slot>
+		  	</div>
+		  </div>
+		  <button class="modal-close is-large" @click="$emit('close')" aria-label="close"></button>
+		</div> 
 	`,
 	data(){
 		return{
@@ -23,10 +23,9 @@ Vue.component('message', {
 	}
 });
 
-// Vue.component('task', {
-// 	template: '<li><slot></slot></li>'
-// });
-
 new Vue({
-	el: '#root'
+	el: '#root',
+	data: {
+		showModal: false
+	}
 });
