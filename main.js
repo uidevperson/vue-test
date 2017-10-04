@@ -11,16 +11,6 @@ Vue.component('modal', {
 		  <button class="modal-close is-large" @click="$emit('close')" aria-label="close"></button>
 		</div> 
 	`,
-	data(){
-		return{
-			isVisible: true
-		};
-	},
-	methods: {
-			hideModal(){
-				this.isVisible = false;
-			}
-	}
 });
 
 new Vue({

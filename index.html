@@ -5,23 +5,11 @@
 <body>
 <div id="root" class='container'>
 	<modal v-if='showModal' @close='showModal = false'>
-		  <p>
-		    Lorem ipsum dolor sit amet.
-		   </p>
+		<p>
+			Lorem ipsum dolor sit amet.
+		</p>
 	</modal>
 	<button @click='showModal = true'>Show Modal</button>
-<!-- 	<div class="modal is-active">
-	  <div class="modal-background"></div>
-	  <div class="modal-content">
-	  	<div class='box'>
-		    <p>
-		    	Lorem ipsum dolor sit amet.
-		    </p>
-	  	</div>
-	  </div>
-	  <button class="modal-close is-large" aria-label="close"></button>
-	</div> -->
-
 </div>
 </div>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
