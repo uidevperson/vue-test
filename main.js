@@ -5,12 +5,10 @@ Vue.component('modal', {
 		  <div class="modal-background"></div>
 		  <div class="modal-content">
 		  	<div class='box'>
-			    <p>
-			    	Lorem ipsum dolor sit amet.
-			    </p>
+			    <slot></slot>
 		  	</div>
 		  </div>
-		  <button class="modal-close is-large" aria-label="close"></button>
+		  <button class="modal-close is-large" @click="$emit('close')" aria-label="close"></button>
 		</div> 
 	`,
 	data(){
@@ -26,5 +24,8 @@ Vue.component('modal', {
 });
 
 new Vue({
-	el: '#root'
+	el: '#root',
+	data: {
+		showModal: false
+	}
 });

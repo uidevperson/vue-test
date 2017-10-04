@@ -4,7 +4,12 @@
 	<title>vue</title>
 <body>
 <div id="root" class='container'>
-	<modal></modal>
+	<modal v-if='showModal' @close='showModal = false'>
+		  <p>
+		    Lorem ipsum dolor sit amet.
+		   </p>
+	</modal>
+	<button @click='showModal = true'>Show Modal</button>
 <!-- 	<div class="modal is-active">
 	  <div class="modal-background"></div>
 	  <div class="modal-content">
