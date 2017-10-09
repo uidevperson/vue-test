@@ -29,8 +29,7 @@ Vue.component('tabs', {
 		}
 	}
 });
-
-
+// testing 2
 Vue.component('tab', {
 	template:`
 		<div v-show="isActive"><slot></slot></div>
