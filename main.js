@@ -4,10 +4,9 @@ Vue.component('tabs', {
 	<div>
 	  <div class="tabs">
 		  <ul>
-		    <li class="is-active"><a>Pictures</a></li>
-		    <li><a>Music</a></li>
-		    <li><a>Videos</a></li>
-		    <li><a>Documents</a></li>
+		    <li v-for="tab in tabs" :class="{ 'is-active' : tab.selected }" >
+		    	<a href='#' @click="selectedTab(tab) "> {{ tab.name}}</a>
+		    </li>
 		  </ul>
 		</div>
 
@@ -21,6 +20,11 @@ Vue.component('tabs', {
 	},
 	created() {
 		this.tabs = this.$children;
+	},
+	methods: {
+		selectedTab(){
+			alert('selectedTab');
+		}
 	}
 });
 
@@ -30,7 +34,10 @@ Vue.component('tab', {
 	`,
 	props: {
 		name: {
-			required: true
+			required: true,
+			selected: {
+				default: false
+			}
 		}
 	}
 });
