@@ -1,6 +1,7 @@
 Vue.component('tabs', {
 	props: ['title', 'body'],
 	template: `
+	<div>
 	  <div class="tabs">
 		  <ul>
 		    <li class="is-active"><a>Pictures</a></li>
@@ -8,10 +9,29 @@ Vue.component('tabs', {
 		    <li><a>Videos</a></li>
 		    <li><a>Documents</a></li>
 		  </ul>
+		</div>
+
+		<div class='tab-details'>
+			<slot></slot>
+		</div>
 	</div>
 	`,
-	mounted() {
-		console.log(this.$children);
+	data() {
+		return { tabs:[] };
+	},
+	created() {
+		this.tabs = this.$children;
+	}
+});
+
+Vue.component('tab', {
+	template:`
+		<div><slot></slot></div>
+	`,
+	props: {
+		name: {
+			required: true
+		}
 	}
 });
 
