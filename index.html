@@ -4,11 +4,21 @@
 	<title>vue</title>
 <body>
 <div id="root" class='container'>
-	<modal v-if='showModal' @close='showModal = false'>
-		<p>
-			Lorem ipsum dolor sit amet.
-		</p>
-	</modal>
+	<tabs>
+		<tab name='About us'>
+			<h1>here is some content about us</h1>
+		</tab>
+	</tabs>
+	<tabs>
+		<tab name='About us'>
+			<h1>here is some content about us</h1>
+		</tab>
+	</tabs>
+	<tabs>
+		<tab name='About us'>
+			<h1>here is some content about us</h1>
+		</tab>
+	</tabs>
 	<button @click='showModal = true'>Show Modal</button>
 </div>
 </div>
