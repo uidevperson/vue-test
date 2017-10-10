@@ -4,17 +4,9 @@
 	<title>vue</title>
 <body>
 <div id="root" class='container'>
-	<tabs>
-		<tab name='About us' :selected='true'>
-			<h1>here is some content about us</h1>
-		</tab>
-		<tab name='About our culture'>
-			<h1>here is some content about our culture</h1>
-		</tab>
-		<tab name='About our vision'>
-			<h1>here is some content about our vision</h1>
-		</tab>
-</div>
+	<coupon @applied='onCouponApplied'></coupon>
+	<h1 v-if='couponApplied'>You applied a coupon {{value}}</h1>
+		
 </div>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
 <script type="text/javascript" src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
