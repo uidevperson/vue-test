@@ -14,9 +14,14 @@ Vue.component('coupon', {
 
 new Vue({
 	el: '#root',
+	data:{
+		couponApplied: false,
+		value: ''
+	},
 	methods: { 	
 		onCouponApplied(value){
-			alert('applied ' + value);
+			this.couponApplied = true;
+			this.value = value;
 		}
 	}
 });

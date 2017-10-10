@@ -5,6 +5,7 @@
 <body>
 <div id="root" class='container'>
 	<coupon @applied='onCouponApplied'></coupon>
+	<h1 v-if='couponApplied'>You applied a coupon {{value}}</h1>
 		
 </div>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
