@@ -1,3 +1,5 @@
+window.Event = new Vue();
+
 Vue.component('coupon', {
 	template: `
 	<div>
@@ -7,7 +9,7 @@ Vue.component('coupon', {
 	methods: { 	
 		onCouponApplied(e){
 			e.preventDefault();
-			this.$emit('applied', e.currentTarget.value);
+			Event.$emit('applied', e.currentTarget.value);
 		}
 	}
 });
@@ -23,6 +25,11 @@ new Vue({
 			this.couponApplied = true;
 			this.value = value;
 		}
+	},
+	created() { 	
+		Event.$on('applied', (value) => {
+			this.onCouponApplied(value);
+		});
 	}
 });
 
