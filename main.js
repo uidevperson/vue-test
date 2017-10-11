@@ -1,4 +1,14 @@
-window.Event = new Vue();
+window.Event = new class{
+	constructor(){
+		this.vue = new Vue();
+	}
+	fire(event, data = null){
+		this.vue.$emit(event, data);
+	}
+	listen(event, callback){
+		this.vue.$on(event, callback);
+	}
+};
 
 Vue.component('coupon', {
 	template: `
@@ -9,7 +19,7 @@ Vue.component('coupon', {
 	methods: { 	
 		onCouponApplied(e){
 			e.preventDefault();
-			Event.$emit('applied', e.currentTarget.value);
+			Event.fire('applied', e.currentTarget.value);
 		}
 	}
 });
@@ -27,7 +37,7 @@ new Vue({
 		}
 	},
 	created() { 	
-		Event.$on('applied', (value) => {
+		Event.listen('applied', (value) => {
 			this.onCouponApplied(value);
 		});
 	}
