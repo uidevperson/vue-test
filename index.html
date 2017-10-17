@@ -5,7 +5,12 @@
 <body>
 <div id="root" class='container'>
 	<progress-view inline-template>
-		<h1>Your progress is {{ completionRate }}</h1>
+		<div>
+			<h1>Your progress is {{ completionRate }} %</h1>
+			<p>
+				<button @click='completionRate+=10'>Update</button>
+			</p>
+		</div>
 	</progress-view>		
 </div>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
