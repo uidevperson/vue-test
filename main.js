@@ -5,7 +5,7 @@ Vue.component('progress-view', {
 		};
 	}
 });
-
+//
 new Vue({
 	el: '#root'
 });
